@@ -1,0 +1,44 @@
+# --- Laravel ---
+/vendor/
+/.env
+.env.*
+/.env.backup
+/storage/*.key
+/storage/pail
+/storage/debugbar/
+/storage/framework/cache/data/
+/storage/framework/sessions/
+/storage/framework/views/
+/storage/logs/*.log
+/bootstrap/cache/*.php
+/public/storage
+
+# --- Frontend / Vite / Vue ---
+/node_modules/
+/public/build/
+/public/hot
+/public/mix-manifest.json
+/public/css/
+/public/js/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# --- IDEs & Tools ---
+/.idea/
+/.vscode/
+/.fleet/
+/.nova/
+/.zed/
+/.phpactor.json
+/.phpunit.cache
+/.phpunit.result.cache
+/auth.json
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Others ---
+Homestead.yaml
+Homestead.json

@@ -1,0 +1,142 @@
+<template>
+  <div class="min-h-screen h-full md:h-screen bg-gray-950 text-slate-300 font-sans flex">
+    <section class="p-6 w-3/4 flex-grow">
+      <div class="bg-slate-800 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
+        <div
+          v-for="(msg, index) in messages"
+          :key="index"
+          :class="{ 'text-right': msg.from === 'user' }"
+        >
+          <p>
+            <strong class="text-teal-400">{{ msg.from === "user" ? "Vos" : "IA" }}:</strong>
+            {{ msg.text }}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex space-x-2">
+        <input
+          v-model="input"
+          @keyup.enter="send"
+          class="bg-slate-800 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          placeholder="Escribí algo..."
+        />
+        <button
+          @click="send"
+          class="bg-teal-500 text-white p-2 w-1/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2"
+        >
+          <i class="fas fa-paper-plane"></i>
+          <span>Enviar</span>
+        </button>
+        <button
+          @click="clearChat"
+          class="bg-rose-900 text-white p-2 w-1/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2"
+        >
+          <i class="fas fa-trash-alt"></i>
+          <span>Borrar Chat</span>
+        </button>
+      </div>
+    </section>
+    <!-- Panel lateral de sugerencias -->
+    <aside
+      class="w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex flex-col justify-between"
+    >
+      <div>
+        <h2 class="text-teal-400 text-lg font-semibold mb-3 border-b border-slate-600 pb-1">
+          Sugerencias de preguntas:
+        </h2>
+        <ul class="space-y-2 overflow-y-auto">
+          <li
+            v-for="(sugerencia, index) in sugerenciasVisibles"
+            :key="index"
+            @click="usarSugerencia(sugerencia)"
+            class="cursor-pointer text-sm text-slate-300 hover:text-teal-400 hover:underline transition"
+          >
+            • {{ sugerencia }}
+          </li>
+        </ul>
+      </div>
+      <!-- Botón scroll -->
+      <div class="flex justify-center mt-4">
+        <button
+          @click="scrollToInfo"
+          class="bg-teal-500 text-white py-2 px-5 rounded-lg hover:bg-teal-600 transition inline-flex items-center space-x-2"
+        >
+          <i class="fas fa-angle-double-down"></i>
+          <span>Ver más sobre Agustín</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+
+const messages = ref<{ from: string; text: string }[]>([]);
+const input = ref("");
+const infoSection = ref<HTMLElement | null>(null);
+
+async function send() {
+  if (!input.value.trim()) return;
+
+  messages.value.push({ from: "user", text: input.value });
+
+  const res = await fetch("http://127.0.0.1:8000/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: input.value }),
+  });
+
+  const data = await res.json();
+  messages.value.push({ from: "ia", text: data.reply });
+  input.value = "";
+}
+
+function clearChat() {
+  messages.value = []; // Limpiar los mensajes del chat
+}
+const sugerencias = [
+  "¿Cuál es el rol de Agustín en el Ejército Argentino?",
+  "¿Qué tecnologías domina Agustín en el desarrollo web?",
+  "¿Dónde estudia actualmente Agustín?",
+  "¿Desde cuándo se dedica a la programación?",
+  "¿Qué idiomas habla Agustín y con qué nivel?",
+  "¿Cuáles son los intereses personales de Agustín fuera del trabajo?",
+  "¿Qué tipo de música escucha Agustín y cuáles son sus artistas favoritos?",
+  "¿Cuáles son los videojuegos favoritos de Agustín?",
+  "¿Cómo se describe la personalidad de Agustín?",
+  "¿Cuál es el artista favorito de Agustín?",
+  "¿Cómo empezó Agustín a interesarse por la programación?",
+  "¿Le gusta entrenar o ir al gimnasio?",
+  "¿Cuál es el lugar donde nació y dónde vive ahora?",
+  "¿Cuál es el equipo de fútbol de Agustín?",
+  "¿Cuánto mide Agustín?",
+  "¿Cuántos años tiene Agustín?",
+  "¿Cómo lo puedo contactar?",
+];
+
+const sugerenciasVisibles = ref<string[]>([]);
+
+function obtener10SugerenciasAleatorias() {
+  const mezcladas = [...sugerencias].sort(() => Math.random() - 0.5);
+  sugerenciasVisibles.value = mezcladas.slice(0, 10);
+}
+
+function usarSugerencia(texto: string) {
+  input.value = texto;
+}
+
+onMounted(() => {
+  obtener10SugerenciasAleatorias();
+  setInterval(obtener10SugerenciasAleatorias, 20000);
+});
+
+function scrollToInfo() {
+  const target = document.getElementById("info-section");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+</script>
