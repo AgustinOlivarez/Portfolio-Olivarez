@@ -1,7 +1,6 @@
 # --- Laravel ---
 /vendor/
 /.env
-.env.*
 /.env.backup
 /storage/*.key
 /storage/pail

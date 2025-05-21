@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen h-full md:h-screen bg-gray-950 text-slate-300 font-sans flex">
+<div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex">
     <section class="p-6 w-3/4 flex-grow">
       <div class="bg-slate-800 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
         <div
@@ -50,9 +50,9 @@
             v-for="(sugerencia, index) in sugerenciasVisibles"
             :key="index"
             @click="usarSugerencia(sugerencia)"
-            class="cursor-pointer text-sm text-slate-300 hover:text-teal-400 hover:underline transition"
+            class="cursor-pointer listPre"
           >
-            • {{ sugerencia }}
+            <div class="pre bg-teal-500"></div><p>{{ sugerencia }}</p>
           </li>
         </ul>
       </div>
@@ -140,3 +140,33 @@ function scrollToInfo() {
 }
 
 </script>
+
+<style scoped>
+.listPre {
+    list-style: none;
+    width: 100%;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.listPre:hover {
+    color: #fff ;
+    transition: 0.3s;
+}
+.listPre:hover .pre {
+    transition: 0.3s;
+    width: 28px;
+}
+.listPre p{
+    display: inline-block;
+    width: 80%;
+}
+ .pre {
+    clip-path: polygon(100% 0%, 83.46% 52.34%, 68.4% 100%, 0% 100%, 0% 0%);
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 7px;
+    transition: 0.3s;
+ }
+</style>

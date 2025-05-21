@@ -3,6 +3,7 @@ import ChatIA from './components/ChatIA.vue'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
 import Presentacion from './components/Presentacion.vue'
+import FormContacto from './components/FormContacto.vue'
 </script>
 
 <template>
@@ -14,6 +15,9 @@ import Presentacion from './components/Presentacion.vue'
   </main>
   <section id="info-section">
     <Presentacion />
+  </section>
+  <section id="form-section" class="bg-gray-950 py-20 px-6 md:px-24 text-white">
+    <FormContacto />
   </section>
   <div>
     <Footer />

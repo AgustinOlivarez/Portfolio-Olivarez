@@ -4,6 +4,8 @@
     ref="infoSection"
     class="bg-gray-950 py-20 px-6 md:px-24 text-white flex flex-col md:flex-row items-center gap-12"
   >
+  <div class="flex justify-center">
+
     <!-- Imagen a la izquierda -->
     <div class="w-full md:w-1/4 flex justify-center">
       <img
@@ -66,6 +68,7 @@
         </a>
       </div>
     </div>
+  </div>
   </section>
 </template>
 
