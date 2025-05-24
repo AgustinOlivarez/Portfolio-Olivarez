@@ -2,9 +2,10 @@
     <div class="max-w-md mx-auto mt-10 p-6 bg-gray-900 rounded-2xl shadow-lg">
         <form @submit.prevent="submitForm" class="space-y-6">
             <div>
+                <h1 class="text-teal-400 text-lg font-semibold mb-3 text-center">Contactame</h1>
                 <label
                     for="name"
-                    class="block text-sm font-medium text-gray-200"
+                    class="block text-sm font-medium text-teal-400"
                     >Nombre:</label
                 >
                 <input
@@ -12,13 +13,13 @@
                     id="name"
                     v-model="name"
                     required
-                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                 />
             </div>
             <div>
                 <label
                     for="email"
-                    class="block text-sm font-medium text-gray-200"
+                    class="block text-sm font-medium text-teal-400"
                     >Correo electrónico:</label
                 >
                 <input
@@ -26,13 +27,13 @@
                     id="email"
                     v-model="email"
                     required
-                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                 />
             </div>
             <div>
                 <label
                     for="message"
-                    class="block text-sm font-medium text-gray-200"
+                    class="block text-sm font-medium text-teal-400"
                     >Mensaje:</label
                 >
                 <textarea
@@ -40,14 +41,15 @@
                     v-model="message"
                     required
                     rows="4"
-                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full px-4 py-2 border border-gray-700 bg-gray-800 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                 ></textarea>
             </div>
             <button
                 type="submit"
-                class="w-full bg-blue-700 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition duration-200"
+                class="w-full bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition duration-200 justify-center inline-flex items-center space-x-2"
             >
-                Enviar
+                <i class="fas fa-paper-plane"></i>
+                <span>Enviar</span>
             </button>
         </form>
     </div>
@@ -79,7 +81,7 @@ export default {
                 .then((data) => {
 
                     if (data.success) {
-                        alert("Mensaje enviado correctamente");
+                        alert("Este formulario ha enviado un mail a mi correo, lo veré pronto");
                         this.name = "";
                         this.email = "";
                         this.message = "";

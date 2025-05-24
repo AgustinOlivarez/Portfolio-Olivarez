@@ -1,7 +1,7 @@
 <template>
 <div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex">
     <section class="p-6 w-3/4 flex-grow">
-      <div class="bg-slate-800 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
+      <div class="bg-gray-900 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
         <div
           v-for="(msg, index) in messages"
           :key="index"
@@ -18,7 +18,7 @@
         <input
           v-model="input"
           @keyup.enter="send"
-          class="bg-slate-800 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          class="bg-gray-900 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
           placeholder="Escribí algo..."
         />
         <button
