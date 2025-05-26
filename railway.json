@@ -11,8 +11,11 @@
         },
         "build": {
           "commands": [
-            "npm run build",
-            "mkdir -p storage/framework/views storage/framework/cache storage/logs",
+            "mkdir -p storage/app/data",
+            "mkdir -p storage/framework/cache/data",
+            "mkdir -p storage/framework/sessions",
+            "mkdir -p storage/framework/views",
+            "mkdir -p storage/logs",
             "chmod -R 775 storage bootstrap/cache",
             "php artisan config:cache",
             "php artisan route:cache",
