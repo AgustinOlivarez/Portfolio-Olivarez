@@ -1,0 +1,15 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "commands": [
+      "composer install --no-interaction --prefer-dist --optimize-autoloader",
+      "npm install",
+      "npm run build"
+    ]
+  },
+  "start": {
+    "cmd": "php artisan serve --host=0.0.0.0 --port=$PORT"
+  }
+}
