@@ -2,6 +2,6 @@
 
 # Portfolio de Agustín Olivarez
 
-Este proyecto es mi carta de presentación, el objetivo es conocerme de manera mas dinámica e interactiva    
-Para este proyecto utilicé Vue y Tailwind para el frontend y Laravel para el backend, la bdd que utilizo es mySQL 
+Este proyecto es mi carta de presentación, el objetivo es conocerme de manera mas dinámica e interactiva.    
+Para este proyecto utilicé Vue y Tailwind para el frontend y Laravel para el backend, la bdd que utilizo es mySQL. 
  
