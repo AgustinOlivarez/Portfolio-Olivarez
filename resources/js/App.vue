@@ -32,3 +32,4 @@ import StackUtilizado from './components/StackUtilizado.vue'
     <Footer />
   </div>
 </template>
+

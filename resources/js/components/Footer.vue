@@ -1,5 +1,5 @@
 <template>
-        <section class="bg-gray-950 py-6 mt-10">
+        <section class="bg-gray-950 py-6 ">
       <div class="max-w-6xl mx-auto text-center">
         <!-- Iconos de Redes Sociales -->
         <div class="flex justify-center gap-6 mb-4">

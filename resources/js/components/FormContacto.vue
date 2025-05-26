@@ -1,8 +1,8 @@
 <template>
-    <div class="max-w-md mx-auto mt-10 p-6 bg-gray-900 rounded-2xl shadow-lg">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-gray-900 rounded-2xl shadow-lg animate__animated" data-animation="animate__fadeInLeft">
         <form @submit.prevent="submitForm" class="space-y-6">
             <div>
-                <h1 class="text-teal-400 text-lg font-semibold mb-3 text-center">Contactame</h1>
+                <h1 class="text-teal-400 text-lg font-semibold mb-3 text-center"><i class="fa fa-envelope mr-2" aria-hidden="true"></i>Contactame</h1>
                 <label
                     for="name"
                     class="block text-sm font-medium text-teal-400"
@@ -96,4 +96,25 @@ export default {
         },
     },
 };
+
+
+// Código JavaScript para activar la animación al hacer scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const animationClass = el.dataset.animation;
+      el.classList.add(animationClass);
+      observer.unobserve(el); // Opcional: evita que se repita
+    }
+  });
+}, {
+  threshold: 0.1 // 10% del elemento visible
+});
+
+// Observar los elementos que quieras animar
+document.querySelectorAll('[data-animation]').forEach(el => {
+  observer.observe(el);
+});
+
 </script>

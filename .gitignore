@@ -1,5 +1,6 @@
 # --- Laravel ---
 /vendor/
+/toDo.txt
 /.env
 /.env.backup
 /storage/*.key

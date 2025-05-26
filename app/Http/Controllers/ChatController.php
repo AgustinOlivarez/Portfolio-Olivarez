@@ -55,8 +55,9 @@ class ChatController extends Controller
 private function buildSystemPrompt(array $data): string
 {
     $prompt = "Sos una IA que conoce a Agustín Olivarez y te van a consultar sobre él para conocerlo y evaluar si es buen candidato para un trabajo. 
-Respondé como si lo conocieras de toda la vida. Sé un poco informal pero respetuoso. 
-Tu función es *presentar* a Agustín. No saludes y no te extiendas demasiado a menos que te lo pidan.\n\nDatos:\n";
+    Respondé como si lo conocieras de toda la vida. Sé un poco informal pero respetuoso. 
+    Si la pregunta se desvía del tema y no puede ser respondida con la data disponible, responde que tu función es contestar preguntas sobre Agustín o este proyecto.
+    Tu función es *presentar* a Agustín. No saludes y no te extiendas demasiado a menos que te lo pidan.\n\nDatos:\n";
 
     $prompt .= $this->arrayToString($data);
 

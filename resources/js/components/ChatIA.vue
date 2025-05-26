@@ -1,6 +1,6 @@
 <template>
 <div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex">
-    <section class="p-6 w-3/4 flex-grow">
+    <section class="p-6 w-3/4 flex-grow animate__animated animate__zoomIn">
       <div class="bg-gray-900 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
         <div
           v-for="(msg, index) in messages"
@@ -18,19 +18,20 @@
         <input
           v-model="input"
           @keyup.enter="send"
-          class="bg-gray-900 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          class="bg-gray-900 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
+           sm:w-6/10 text-sm"
           placeholder="Escribí algo..."
         />
         <button
           @click="send"
-          class="bg-teal-500 text-white p-2 w-1/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2"
+          class="bg-teal-500 text-white p-2 w-1/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2 sm:w-2/10"
         >
           <i class="fas fa-paper-plane"></i>
           <span>Enviar</span>
         </button>
         <button
           @click="clearChat"
-          class="bg-rose-900 text-white p-2 w-1/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2"
+          class="bg-rose-900 text-white p-2 w-1/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2 sm:w-2/10"
         >
           <i class="fas fa-trash-alt"></i>
           <span>Borrar Chat</span>
@@ -39,10 +40,10 @@
     </section>
     <!-- Panel lateral de sugerencias -->
     <aside
-      class="w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex flex-col justify-between"
+      class="w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex flex-col justify-between animate__animated animate__fadeInRight"
     >
       <div>
-        <h2 class="text-teal-400 text-lg font-semibold mb-3 border-b border-slate-600 pb-1">
+        <h2 class="text-teal-400 text-lg font-semibold mb-3 border-b border-slate-600 pb-1 sm:text-base">
           Sugerencias de preguntas:
         </h2>
         <ul class="space-y-2 overflow-y-auto">
@@ -114,13 +115,14 @@ const sugerencias = [
   "¿Cuánto mide Agustín?",
   "¿Cuántos años tiene Agustín?",
   "¿Cómo lo puedo contactar?",
+  "¿Cómo funciona este proyecto?",
 ];
 
 const sugerenciasVisibles = ref<string[]>([]);
 
 function obtener10SugerenciasAleatorias() {
   const mezcladas = [...sugerencias].sort(() => Math.random() - 0.5);
-  sugerenciasVisibles.value = mezcladas.slice(0, 10);
+  sugerenciasVisibles.value = mezcladas.slice(0, 7);
 }
 
 function usarSugerencia(texto: string) {

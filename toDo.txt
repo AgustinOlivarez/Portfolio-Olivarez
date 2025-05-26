@@ -1,6 +1,4 @@
-form que manda mail y se guarda en Bdd SQL
 que la ia pueda explicar como se hicieron las cosas
-mi presentacion mas grande (con fotos de fondo? pensar)
-tecnologias utilizadas antes del footer
+antes de deploy cargarme saldo y cambiar la key
 Responsive design
 Deploy cloudflare
