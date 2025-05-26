@@ -1,4 +1,0 @@
-que la ia pueda explicar como se hicieron las cosas
-antes de deploy cargarme saldo y cambiar la key
-Responsive design
-Deploy cloudflare
