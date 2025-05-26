@@ -4,7 +4,7 @@
 /.env
 /.env.backup
 /storage/*.key
-!/storage/app/data/* 
+!/storage/app/data/data.json 
 /storage/pail
 /storage/debugbar/
 /storage/framework/cache/data/
