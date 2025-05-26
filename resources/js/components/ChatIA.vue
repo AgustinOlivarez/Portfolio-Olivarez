@@ -1,5 +1,5 @@
 <template>
-<div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex">
+<div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex overflow-hidden">
     <section class="p-6 w-3/4 flex-grow animate__animated animate__zoomIn">
       <div class="bg-gray-900 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
         <div
@@ -61,7 +61,7 @@
       <div class="flex justify-center mt-4">
         <button
           @click="scrollToInfo"
-          class="bg-teal-500 text-white py-2 px-5 rounded-lg hover:bg-teal-600 transition inline-flex items-center space-x-2"
+          class="bg-teal-500 text-white py-2 px-5 rounded-lg hover:bg-teal-600 transition inline-flex items-center space-x-2 animate-bounce"
         >
           <i class="fas fa-angle-double-down"></i>
           <span>Ver más sobre Agustín</span>

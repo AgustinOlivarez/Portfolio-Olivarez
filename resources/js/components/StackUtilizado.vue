@@ -1,5 +1,5 @@
 <template>
-    <section class="p-2 max-w-8xl mx-auto animate__animated" data-animation="animate__fadeInRight">
+    <section class="p-2 max-w-8xl mx-auto animate__animated overflow-hidden" data-animation="animate__fadeInRight">
         <h1 class="text-3xl font-bold mb-6 text-teal-400">
             <i class="fa fa-lightbulb mr-2" aria-hidden="true"></i>
             Idea del proyecto

@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-md mx-auto mt-10 p-6 bg-gray-900 rounded-2xl shadow-lg animate__animated" data-animation="animate__fadeInLeft">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-gray-900 rounded-2xl shadow-lg animate__animated overflow-hidden" data-animation="animate__fadeInLeft">
         <form @submit.prevent="submitForm" class="space-y-6">
             <div>
                 <h1 class="text-teal-400 text-lg font-semibold mb-3 text-center"><i class="fa fa-envelope mr-2" aria-hidden="true"></i>Contactame</h1>
@@ -66,7 +66,9 @@ export default {
     },
     methods: {
         submitForm() {
-            fetch("http://localhost:8000/api/contact", {
+            const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+            fetch(`${apiBaseUrl}/api/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -79,7 +81,6 @@ export default {
             })
                 .then((res) => res.json())
                 .then((data) => {
-
                     if (data.success) {
                         alert("Este formulario ha enviado un mail a mi correo, lo veré pronto");
                         this.name = "";

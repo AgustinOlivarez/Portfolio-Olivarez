@@ -1,6 +1,6 @@
 <template>
 <!-- Sección principal -->
-<section class="bg-gray-950 text-white py-20 px-6 md:px-24 flex flex-col items-center gap-24">
+<section class="bg-gray-950 text-white py-20 px-6 md:px-24 flex flex-col items-center gap-24 overflow-hidden">
 
   <!-- FOTO + SOBRE MÍ -->
   <div class="w-full flex flex-col md:flex-row items-center gap-12 max-w-4xl animate__animated" data-animation="animate__fadeInUp">
