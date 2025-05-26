@@ -1,0 +1,52 @@
+{
+    "nombre": "Agustin Olivarez",
+    "edad": 25,
+    "fecha_nacimiento": "2000-02-29",
+    "altura": "1.82 m",
+    "peso": "85 kg aprox",
+    "lugar_nacimiento": "Santa Rosa, La Pampa, Argentina",
+    "lugar_residencia": "Saavedra, Ciudad Autónoma de Buenos Aires, Argentina desde 2012",
+    "equipo": "Boca Juniors",
+    "estado_civil": "En pareja hace casi 1 año con una mujer llamada Martina",
+    "personalidad": "proactivo, autodidacta, curioso, responsable, comprometido, profesional, autocritico, flexible",
+    "nacionalidad": "Argentina",
+    "email": "agustinolivarez29@gmail.com",
+    "contacto":"email, botones al final de la pagina con whatsapp, linkedin",
+    "formacion": ["Estudiante de Programacion en sistemas en la UCES desde 2024", "Varios cursos de Programacion y aprendizaje de manera autodidacta desde 2021,Desarrollador Full Stack en Ejercito Argentino desde 2021"],
+    "experiencia": [
+      {
+        "empresa": "Ejército Argentino",
+        "fecha_inicio": "2021-04-01",
+        "fecha_fin": "actualidad",
+        "rol": "Desarrollador Full Stack",
+        "tecnologias": ["Laravel", "MySQL", "Vue.js", "Tailwind CSS", "PHP", "JavaScript", "HTML", "CSS"],
+        "descripcion": "Desarrollo de un sistema de gestión de datos para la Dirección de Bienestar del Ejército utilizando php, laravel, tailwind, Microsoft Sql Server y la pagina web www.bienestar.mil.ar la cual utiliza Vue.js, nuxt.js, Supabase. Arreglo y corrección de errores de código en ambos proyectos. Consulta y mantenimiento de base de datos sql."
+      }
+    ],
+    "intereses": ["IA", "Videojuegos", "Gimnasio", "Ciencia Ficción", "Tecnología, Montañas"],
+    "juegos": ["League of Legends", "Hollow Knight", "Sekiro", "Elden Ring", "Slay the Spite", "Monster Hunter"],
+    "musica": ["Electronica", "Pop melodico", "Rap", "Trap"],
+    "artistas": ["Post Malone", "D4vid", "Conociendo Rusia", "Boris Brejcha", "David Guetta", "Calvin Harris", "Eminem", "Travis Scott", "Duki"],
+    "idiomas": {
+        "espanol": {
+            "nivel": "nativo",
+            "descripcion": "Lengua materna"
+        },
+        "ingles": {
+            "nivel": "avanzado",
+            "descripcion": "10 años de estudio. Comprensión de lectura y escritura, conversación fluida con nativos"
+        }
+    },
+        "habilidades": {
+        "frontend": ["HTML", "CSS", "JavaScript","Bootstrap","TailwindCSS", "Vue.js"],
+        "backend": ["PHP", "Laravel"],
+        "base_de_datos": ["MySQL, heidiSQL, Microsoft SQL Server, Supabase"],
+        "otros": ["Git", "Tailwind CSS, Java, C#, Python"]
+    },
+    "funcionalidad_proyecto": {
+        "descripcion_proyecto": "El proyecto esta pensado para que el usuario pueda conocer a Agustin Olivarez de manera interactiva",
+        "proceso_principal":"El proceso principal de este proyecto es consumir la API de OpenAI para generar respuestas a las preguntas del usuario, las cuales se basan en la información proporcionada por un archivo json.",
+        "proceso_formulario":"El formulario permite al usuario enviar preguntas o comentarios, los cuales son enviados al mail de Agustin, también se almacenan en una BDD MySQL de Agustin."
+    }
+  }
+  
