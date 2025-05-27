@@ -80,10 +80,11 @@ const infoSection = ref<HTMLElement | null>(null);
 
 async function send() {
   if (!input.value.trim()) return;
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
   messages.value.push({ from: "user", text: input.value });
 
-  const res = await fetch("http://127.0.0.1:8000/api/chat", {
+  const res = await fetch(`${apiBaseUrl}/api/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: input.value }),
