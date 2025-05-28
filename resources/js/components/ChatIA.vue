@@ -1,6 +1,8 @@
 <template>
-<div class="min-h- h-full bg-gray-950 text-slate-300 font-sans flex overflow-hidden">
-    <section class="p-6 w-3/4 flex-grow animate__animated animate__zoomIn">
+  <div class="min-h-screen bg-gray-950 text-slate-300 font-sans flex flex-wrap overflow-x-hidden">
+    <section
+      class="p-6 flex-grow animate__animated animate__zoomIn w-full md:w-3/4"
+    >
       <div class="bg-gray-900 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
         <div
           v-for="(msg, index) in messages"
@@ -18,20 +20,20 @@
         <input
           v-model="input"
           @keyup.enter="send"
-          class="bg-gray-900 border border-slate-600 text-white p-2 w-8/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
-           sm:w-6/10 text-sm"
+          class="bg-gray-900 border border-slate-600 text-white p-2 w-6/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
+           sm:w-6/10 text-sm md:w-8/10"
           placeholder="Escribí algo..."
         />
         <button
           @click="send"
-          class="bg-teal-500 text-white p-2 w-1/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2 sm:w-2/10"
+          class="bg-teal-500 text-white p-2 w-2/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2 sm:w-2/10 md:w-1/10"
         >
           <i class="fas fa-paper-plane"></i>
           <span>Enviar</span>
         </button>
         <button
           @click="clearChat"
-          class="bg-rose-900 text-white p-2 w-1/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2 sm:w-2/10"
+          class="bg-rose-900 text-white p-2 w-2/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2 sm:w-2/10 md:w-1/10"
         >
           <i class="fas fa-trash-alt"></i>
           <span>Borrar Chat</span>
@@ -40,7 +42,7 @@
     </section>
     <!-- Panel lateral de sugerencias -->
     <aside
-      class="w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex flex-col justify-between animate__animated animate__fadeInRight"
+      class="sugerencia hidden md:flex w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex-col justify-between animate__animated animate__fadeInRight"
     >
       <div>
         <h2 class="text-teal-400 text-lg font-semibold mb-3 border-b border-slate-600 pb-1 sm:text-base">
@@ -53,7 +55,7 @@
             @click="usarSugerencia(sugerencia)"
             class="cursor-pointer listPre"
           >
-            <div class="pre bg-teal-500"></div><p>{{ sugerencia }}</p>
+            <div class="pre bg-teal-500 mr-2"></div><p>{{ sugerencia }}</p>
           </li>
         </ul>
       </div>
@@ -61,9 +63,9 @@
       <div class="flex justify-center mt-4">
         <button
           @click="scrollToInfo"
-          class="bg-teal-500 text-white py-2 px-5 rounded-lg hover:bg-teal-600 transition inline-flex items-center space-x-2 animate-bounce"
+          class="bg-teal-500 text-white py-2 px-5 rounded-lg hover:bg-teal-600 transition inline-flex items-center space-x-2"
         >
-          <i class="fas fa-angle-double-down"></i>
+          <i class="fas fa-angle-double-down animate-bounce"></i>
           <span>Ver más sobre Agustín</span>
         </button>
       </div>
@@ -142,6 +144,16 @@ function scrollToInfo() {
   }
 }
 
+const width = ref(window.innerWidth);
+
+onMounted(() => {
+  console.log("Ancho inicial:", window.innerWidth);
+
+  window.addEventListener("resize", () => {
+    console.log("Nuevo ancho:", window.innerWidth);
+  });
+});
+
 </script>
 
 <style scoped>
@@ -172,4 +184,5 @@ function scrollToInfo() {
     margin-top: 7px;
     transition: 0.3s;
  }
+
 </style>

@@ -17,13 +17,13 @@ import StackUtilizado from './components/StackUtilizado.vue'
   <section id="info-section">
     <Presentacion />
   </section>
-<section class="bg-gray-950 py-20 px-6 md:px-24">
+<section class="bg-gray-950 py-10 px-6 md:px-24">
   <div class="flex flex-col md:flex-row gap-8">
     <div id="form-section" class="w-full md:w-1/2">
-      <FormContacto />
+      <StackUtilizado />
     </div>
     <div id="stack-section" class="w-full md:w-1/2">
-      <StackUtilizado />
+      <FormContacto />
     </div>
   </div>
 </section>

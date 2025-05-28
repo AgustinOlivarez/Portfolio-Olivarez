@@ -15,7 +15,7 @@
       <h2 class="text-4xl md:text-5xl text-teal-400 font-semibold">
         <i class="fa fa-id-card mr-2"></i> Sobre mí
       </h2>
-      <p class="text-slate-400 leading-relaxed text-lg">
+      <p class="text-slate-400 leading-relaxed text-md sm:text-lg">
         Soy un desarrollador full stack con experiencia en Laravel, Vue.js y más.
         Estudio en UCES desde 2024 y me formo de forma autodidacta desde 2021.
         Actualmente trabajo en el Ejército Argentino como desarrollador de software y bases de datos.
@@ -34,8 +34,8 @@
   <!-- EXPERIENCIA LABORAL -->
   <section class="w-full max-w-4xl text-center animate__animated" data-animation="animate__fadeInRight">
     <h3 class="text-3xl text-teal-300 font-semibold mb-4"><i class="fa fa-briefcase mr-2"></i>Experiencia Laboral</h3>
-    <h4 class="text-xl text-slate-400 font-bold">Desarrollador de Software y administrador de bases de datos - Ejército Argentino</h4>
-    <p class="text-slate-400 text-lg leading-relaxed">
+    <h4 class="text-lg text-slate-400 font-bold sm:text-xl">Desarrollador de Software y administrador de bases de datos - Ejército Argentino</h4>
+    <p class="text-slate-400 text-md leading-relaxed sm:text-lg">
       Me desempeño en el desarrollo y mantenimiento de aplicaciones internas, uso tecnologías como JavaScript, PHP, Laravel, MySQL, Vue y herramientas de gestión, pero siempre aprendo o pruebo cosas nuevas.
     </p>
   </section>
