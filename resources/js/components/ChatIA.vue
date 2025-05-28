@@ -10,35 +10,42 @@
           :class="{ 'text-right': msg.from === 'user' }"
         >
           <p>
-            <strong class="text-teal-400">{{ msg.from === "user" ? "Vos" : "IA" }}:</strong>
+            <strong class="text-teal-400">{{ msg.from === "user" ? "Vos" : "Olibot" }}:</strong>
             {{ msg.text }}
           </p>
         </div>
       </div>
 
-      <div class="flex space-x-2">
-        <input
-          v-model="input"
-          @keyup.enter="send"
-          class="bg-gray-900 border border-slate-600 text-white p-2 w-6/10 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
-           sm:w-6/10 text-sm md:w-8/10"
-          placeholder="Escribí algo..."
-        />
-        <button
-          @click="send"
-          class="bg-teal-500 text-white p-2 w-2/10 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2 sm:w-2/10 md:w-1/10"
-        >
-          <i class="fas fa-paper-plane"></i>
-          <span>Enviar</span>
-        </button>
-        <button
-          @click="clearChat"
-          class="bg-rose-900 text-white p-2 w-2/10 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2 sm:w-2/10 md:w-1/10"
-        >
-          <i class="fas fa-trash-alt"></i>
-          <span>Borrar Chat</span>
-        </button>
-      </div>
+<div class="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
+  <!-- INPUT -->
+  <input
+    v-model="input"
+    @keyup.enter="send"
+    class="bg-gray-900 border border-slate-600 text-white p-2 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
+     text-sm w-full sm:w-6/10"
+    placeholder="Escribí algo..."
+  />
+
+  <!-- BOTONES agrupados -->
+  <div class="flex w-full sm:w-4/10 md:w-4/10 space-x-2">
+    <button
+      @click="send"
+      class="bg-teal-500 text-white p-2 w-1/2 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2"
+    >
+      <i class="fas fa-paper-plane"></i>
+      <span>Enviar</span>
+    </button>
+    <button
+      @click="clearChat"
+      class="bg-rose-900 text-white p-2 w-1/2 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2"
+    >
+      <i class="fas fa-trash-alt"></i>
+      <span>Borrar Chat</span>
+    </button>
+  </div>
+</div>
+
+
     </section>
     <!-- Panel lateral de sugerencias -->
     <aside
@@ -135,6 +142,10 @@ function usarSugerencia(texto: string) {
 onMounted(() => {
   obtener10SugerenciasAleatorias();
   setInterval(obtener10SugerenciasAleatorias, 20000);
+    messages.value.push({
+    from: "ia",
+    text: "Hola, soy Olibot, el asistente de Agus. Estoy entrenado para responderte cualquier pregunta sobre él o sobre este proyecto.",
+    });
 });
 
 function scrollToInfo() {

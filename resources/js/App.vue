@@ -5,14 +5,16 @@ import Header from './components/Header.vue'
 import Presentacion from './components/Presentacion.vue'
 import FormContacto from './components/FormContacto.vue'
 import StackUtilizado from './components/StackUtilizado.vue'
+import ScrollToChat from './components/ScrollToChat.vue'
 </script>
 
 <template>
   <header class="bg-gray-950 shadow p-6 flex justify-center">
     <Header />
   </header>
-    <main>
+    <main id="chat-section">
     <ChatIA />
+    <ScrollToChat />
   </main>
   <section id="info-section">
     <Presentacion />

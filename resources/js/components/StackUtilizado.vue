@@ -9,7 +9,7 @@
             en este caso utilizando la API de OpenAI para que el usuario pueda interactuar conmigo de una manera más dinámica,
             lo que me pareció muy original e innovador, espero que opines lo mismo y que te haya gustado.
         </p>
-        <h1 class="text-2xl mt-6 font-bold mb-6 text-teal-400 md:text-3xl">
+        <h1 class="text-2xl mt-6 font-bold mb-6 text-teal-400">
             <i class="fa fa-wrench mr-2" aria-hidden="true"></i>
             Tecnologías utilizadas para este proyecto
         </h1>
