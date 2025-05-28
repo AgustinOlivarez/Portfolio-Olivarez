@@ -144,16 +144,6 @@ function scrollToInfo() {
   }
 }
 
-const width = ref(window.innerWidth);
-
-onMounted(() => {
-  console.log("Ancho inicial:", window.innerWidth);
-
-  window.addEventListener("resize", () => {
-    console.log("Nuevo ancho:", window.innerWidth);
-  });
-});
-
 </script>
 
 <style scoped>
