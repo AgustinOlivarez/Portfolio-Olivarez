@@ -1,9 +1,11 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-slate-300 font-sans flex flex-wrap overflow-x-hidden">
+  <div class="h-auto bg-gray-950 text-slate-300 font-sans flex flex-wrap overflow-x-hidden">
     <section
-      class="p-6 flex-grow animate__animated animate__zoomIn w-full md:w-3/4"
+      class="p-4 sm:p-6 flex-grow animate__animated animate__zoomIn w-full md:w-3/4"
     >
-      <div class="bg-gray-900 p-4 rounded-lg shadow-md h-[600px] overflow-y-auto mb-4 space-y-2">
+      <div
+        class="bg-gray-900 p-3 sm:p-4 rounded-lg shadow-md h-[350px] sm:h-[500px] md:h-[600px] overflow-y-auto mb-3 sm:mb-4 space-y-2"
+      >
         <div
           v-for="(msg, index) in messages"
           :key="index"
@@ -16,37 +18,36 @@
         </div>
       </div>
 
-<div class="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
-  <!-- INPUT -->
-  <input
-    v-model="input"
-    @keyup.enter="send"
-    class="bg-gray-900 border border-slate-600 text-white p-2 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500
-     text-sm w-full sm:w-6/10"
-    placeholder="Escribí algo..."
-  />
+      <div class="flex flex-col gap-2 sm:flex-row sm:gap-0 sm:space-x-2">
+        <!-- INPUT -->
+        <input
+          v-model="input"
+          @keyup.enter="send"
+          class="bg-gray-900 border border-slate-600 text-white p-2 rounded-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm w-full sm:w-7/12"
+          placeholder="Escribí algo..."
+        />
 
-  <!-- BOTONES agrupados -->
-  <div class="flex w-full sm:w-4/10 md:w-4/10 space-x-2">
-    <button
-      @click="send"
-      class="bg-teal-500 text-white p-2 w-1/2 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2"
-    >
-      <i class="fas fa-paper-plane"></i>
-      <span>Enviar</span>
-    </button>
-    <button
-      @click="clearChat"
-      class="bg-rose-900 text-white p-2 w-1/2 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2"
-    >
-      <i class="fas fa-trash-alt"></i>
-      <span>Borrar Chat</span>
-    </button>
-  </div>
-</div>
-
-
+        <!-- BOTONES agrupados -->
+        <div class="flex w-full sm:w-5/12 space-x-2">
+          <button
+            @click="send"
+            class="bg-teal-500 text-white p-2 w-1/2 rounded-lg hover:bg-teal-600 inline-flex items-center justify-center space-x-2"
+          >
+            <i class="fas fa-paper-plane"></i>
+            <span>Enviar</span>
+          </button>
+          <button
+            @click="clearChat"
+            class="bg-rose-900 text-white p-2 w-1/2 rounded-lg hover:bg-rose-950 inline-flex items-center justify-center space-x-2"
+          >
+            <i class="fas fa-trash-alt"></i>
+            <span>Borrar Chat</span>
+          </button>
+        </div>
+      </div>
     </section>
+
+
     <!-- Panel lateral de sugerencias -->
     <aside
       class="sugerencia hidden md:flex w-1/4 p-4 bg-gray-950 rounded-lg shadow-md h-[700px] flex-col justify-between animate__animated animate__fadeInRight"
